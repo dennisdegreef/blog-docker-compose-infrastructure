@@ -1,0 +1,10 @@
+frontend:
+  build: frontend
+  ports:
+   - "80:80"
+  volumes:
+   - .:/srv
+  links:
+   - redis
+redis:
+  image: redis
