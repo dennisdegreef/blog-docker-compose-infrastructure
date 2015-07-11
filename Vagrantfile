@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
 
     config.vm.provision :docker do |d|
         d.build_image "/vagrant/docker/base", args: "-t link0/base"
+        d.build_image "/vagrant/docker/php", args: "-t link0/php"
     end
 
     config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", run: "always"
